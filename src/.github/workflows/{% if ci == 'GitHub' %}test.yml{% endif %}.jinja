@@ -128,7 +128,7 @@ jobs:
         {%- if not github_enforce_dev_status_compatibility %}
         continue-on-error: true
         {%- endif %}
-      - name: Initialize test db
+      {# - name: Initialize test db
         run: oca_init_test_database
       - name: Run tests
         run: oca_run_tests
@@ -139,4 +139,4 @@ jobs:
       - name: Update .pot files
         run: oca_export_and_push_pot https://x-access-token:${{ secrets.GIT_PUSH_TOKEN }}@github.com/${{ github.repository }}
       {%- endraw %}
-        if: {{ "${{" }} matrix.makepot == 'true' && github.event_name == 'push' && github.repository_owner == '{{ org_slug }}' {{ "}}" }}
+        if: {{ "${{" }} matrix.makepot == 'true' && github.event_name == 'push' && github.repository_owner == '{{ org_slug }}' {{ "}}" }} #}
