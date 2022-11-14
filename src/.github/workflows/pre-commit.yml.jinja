@@ -1,13 +1,6 @@
 name: pre-commit
 
-on:
-  pull_request:
-    branches:
-      - "{{ odoo_version }}*"
-  push:
-    branches:
-      - "{{ odoo_version }}"
-      - "{{ odoo_version }}-ocabot-*"
+on: push
 
 jobs:
   pre-commit:
