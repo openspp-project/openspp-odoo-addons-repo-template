@@ -2,8 +2,7 @@
 
 ## Set up a development environment
 
-To install CLI apps, you are encouraged to use
-[pipx](https://pipxproject.github.io/pipx/).
+To install CLI apps, you are encouraged to use [pipx](https://pipxproject.github.io/pipx/).
 
 To develop, you need [Poetry](https://python-poetry.org/).
 
@@ -35,12 +34,11 @@ poetry run pytest
 
 ## General OCA guidelines
 
-Please follow the official guide from the
-[OCA Guidelines page](https://odoo-community.org/page/contributing) where applicable
-(most of it relates to Odoo-specific code, while this one is a template and some things
-just don't apply here).
+Please follow the official guide from the [OCA Guidelines page](https://odoo-community.org/page/contributing)
+where applicable (most of it relates to Odoo-specific code, while this one is a template and some things just
+don't apply here).
 
 ## General open source contribution guidelines
 
-Here you will find a good guide so you know how to contribute to this and many other
-projects: https://opensource.guide/how-to-contribute/
+Here you will find a good guide so you know how to contribute to this and many other projects:
+https://opensource.guide/how-to-contribute/

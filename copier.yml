@@ -35,34 +35,32 @@ org_slug:
   type: str
   default: openspp-project
   help:
-    What's the organization slug? If you are creating
-    https://github.com/openspp-project/server-tools, then write "openspp-project" here.
+    What's the organization slug? If you are creating https://github.com/openspp-project/server-tools, then
+    write "openspp-project" here.
 
 org_name:
   type: str
   default: OpenSPP.org
   help:
-    Tell me the Organization name. It's supposed to be human-readable. It will be used
-    in the author key of the __manifest__ files.
+    Tell me the Organization name. It's supposed to be human-readable. It will be used in the author key of
+    the __manifest__ files.
 
 repo_slug:
   type: str
   help:
-    What's the repo slug? If you are creating https://github.com/openspp-project/server-tools, then
-    write "server-tools" here.
+    What's the repo slug? If you are creating https://github.com/openspp-project/server-tools, then write
+    "server-tools" here.
 
 repo_name:
   type: str
   help:
-    Tell me the project name. It's supposed to be human-readable. So, server-tools
-    project could be named like "Tools for server environment(s)"
+    Tell me the project name. It's supposed to be human-readable. So, server-tools project could be named like
+    "Tools for server environment(s)"
 
 repo_website:
   type: str
   default: "https://github.com/{{ org_slug }}/{{ repo_slug }}"
-  help:
-    Tell me the project website. It will be used in the website key of the __manifest__
-    files.
+  help: Tell me the project website. It will be used in the website key of the __manifest__ files.
 
 repo_description:
   type: str
@@ -80,9 +78,8 @@ travis_apt_sources:
   type: yaml
   default: []
   help: >
-    If you need to activate extra apt sources in Travis, this is the place. It must be a
-    YAML list with aliases listed here:
-    https://github.com/travis-ci/apt-source-safelist/blob/master/ubuntu.json.
+    If you need to activate extra apt sources in Travis, this is the place. It must be a YAML list with
+    aliases listed here: https://github.com/travis-ci/apt-source-safelist/blob/master/ubuntu.json.
 
     Example: [heroku, mono]
   when: &ci_is_travis "{{ ci == 'Travis' }}"
@@ -108,28 +105,24 @@ dependency_installation_mode:
 generate_requirements_txt:
   default: yes
   type: bool
-  help:
-    Generate requirements.txt from addons manifests and optional overrides in setup.py
-    files.
+  help: Generate requirements.txt from addons manifests and optional overrides in setup.py files.
 
 rebel_module_groups:
   type: yaml
   default: []
   help: >
-    Are there in this repo modules that don't get along with their friends? If so, list
-    them here (YAML format) and they will be tested in separate jobs.
+    Are there in this repo modules that don't get along with their friends? If so, list them here (YAML
+    format) and they will be tested in separate jobs.
 
-    Beware, if rebel modules should stay separated in groups, you should join them with
-    commas, which could be misinterpreted by YAML.
+    Beware, if rebel modules should stay separated in groups, you should join them with commas, which could be
+    misinterpreted by YAML.
 
     Example: ["rebel_module_1,rebel_module_2", even_more_rebel_module]
 
 include_wkhtmltopdf:
   type: bool
   default: no
-  help:
-    Do you need to install wkhtmltopdf? Usually only needed if you're going to test PDF
-    report generation.
+  help: Do you need to install wkhtmltopdf? Usually only needed if you're going to test PDF report generation.
 
 github_enforce_dev_status_compatibility:
   type: bool

@@ -1,22 +1,20 @@
 # OpenSPP Addons Repo Template
 
-This is a template created to make easier the task of maintaining OpenSPP addon
-repositories.
+This is a template created to make easier the task of maintaining OpenSPP addon repositories.
 
 ## Why?
 
-We have dozens of repos. Most of them look the same, and most of them need
-specific-but-similar configurations for CI, code quality, dependency management, etc.
+We have dozens of repos. Most of them look the same, and most of them need specific-but-similar configurations
+for CI, code quality, dependency management, etc.
 
-We need a place where to evolve those things and push them automatically everywhere
-else.
+We need a place where to evolve those things and push them automatically everywhere else.
 
 This is that place.
 
 ## How to use?
 
-This is a template. It is based on [Copier](https://github.com/pykong/copier), go there
-to read its docs to know how it works.
+This is a template. It is based on [Copier](https://github.com/pykong/copier), go there to read its docs to
+know how it works.
 
 Quick answer to bootstrap a new repo:
 
@@ -65,12 +63,12 @@ This template allows to bootstrap and update addon repositories for these Odoo v
 - 15.0
 - 16.0
 
-Future versions will be added as they are released. Past versions could be added as long
-as they don't break existing branches.
+Future versions will be added as they are released. Past versions could be added as long as they don't break
+existing branches.
 
-Right now this template is tightly coupled with code, guidelines and decisions from OpenSPP.
-You might find some things that you can reuse in your own templates, but in general
-terms this template is not meant to support being used as is for other organizations.
+Right now this template is tightly coupled with code, guidelines and decisions from OpenSPP. You might find
+some things that you can reuse in your own templates, but in general terms this template is not meant to
+support being used as is for other organizations.
 
 ## The legal stuff
 
