@@ -9,8 +9,8 @@ on:
       - "{{ odoo_version }}"
       - "{{ odoo_version }}-ocabot-*"
 env:
-  OCA_GIT_USER_NAME: ${{ org_slug }}
-  OCA_GIT_USER_EMAIL: bot@${{ org_slug }}.org
+  OCA_GIT_USER_NAME: {{ org_slug }}
+  OCA_GIT_USER_EMAIL: bot@{{ org_slug }}.org
 {%
 set IMAGES = {
   "odoo": {
