@@ -46,7 +46,7 @@ def test_bootstrap(tmp_path: Path, odoo_version: float, cloned_template: Path):
     assert not (tmp_path / ".gitmodules").is_file()
     # Assert other files
     license_ = (tmp_path / "LICENSE").read_text()
-    assert "GNU AFFERO GENERAL PUBLIC LICENSE" in license_
+    assert "GNU LESSER GENERAL PUBLIC LICENSE" in license_
     # Workflows for the subprojects are copied
     assert (tmp_path / ".github" / "workflows" / "pre-commit.yml").is_file()
     assert (tmp_path / ".github" / "workflows" / "stale.yml").is_file()
