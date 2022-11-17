@@ -33,7 +33,7 @@ odoo_version:
 
 org_slug:
   type: str
-  default: openspp-project
+  default: openspp
   help:
     What's the organization slug? If you are creating https://github.com/openspp-project/server-tools, then
     write "openspp-project" here.
