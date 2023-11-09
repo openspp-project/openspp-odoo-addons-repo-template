@@ -1,14 +1,7 @@
 # Configure jinja2 defaults to make syntax highlighters happy
 _templates_suffix: .jinja
 _subdirectory: src
-_envops:
-  block_end_string: "%}"
-  block_start_string: "{%"
-  comment_end_string: "#}"
-  comment_start_string: "{#"
-  keep_trailing_newline: true
-  variable_end_string: "}}"
-  variable_start_string: "{{"
+_min_copier_version: "9"
 
 _tasks:
   - rm -f {% if ci != "Travis" %}.travis.yml{% endif %} .t2d.yml
@@ -20,7 +13,7 @@ _migrations:
 
 odoo_version:
   type: float
-  default: 16.0
+  default: 17.0
   choices:
     - 10.0
     - 11.0
@@ -29,6 +22,7 @@ odoo_version:
     - 14.0
     - 15.0
     - 16.0
+    - 17.0
   help: Which Odoo version are we deploying in this branch?
 
 org_slug:
@@ -74,6 +68,20 @@ ci:
     - GitHub
   help: Which CI system to use ?
 
+odoo_test_flavor:
+  type: str
+  default: |-
+    {% if odoo_version < 13.0 -%}
+        OCB
+    {%- else -%}
+        Both
+    {%- endif %}
+  choices:
+    - Odoo
+    - OCB
+    - Both
+  help: Which Odoo flavor should be used for CI tests ?
+
 travis_apt_sources:
   type: yaml
   default: []
@@ -102,10 +110,28 @@ dependency_installation_mode:
   help: Choose how to install module dependencies.
   when: *ci_is_travis
 
+use_pyproject_toml:
+  default: "{% if odoo_version < 17.0 -%}no{% else %}yes{% endif %}"
+  type: bool
+  help: Use pyproject.toml instead of setup.py.
+  when: "{{ odoo_version >= 14.0 }}"
+
 generate_requirements_txt:
   default: yes
   type: bool
   help: Generate requirements.txt from addons manifests and optional overrides in setup.py files.
+
+use_ruff:
+  default: "{% if odoo_version < 17.0 -%}no{% else %}yes{% endif %}"
+  type: bool
+  help: Use ruff and ruff-format instead of flake8, autoflake, pyupgrade, isort, black.
+  when: "{{ odoo_version >= 14.0 }}"
+
+additional_ruff_rules:
+  type: yaml
+  default: []
+  help: List of additional ruff rules to enable.
+  when: "{{ use_ruff }}"
 
 rebel_module_groups:
   type: yaml
