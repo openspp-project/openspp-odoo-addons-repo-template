@@ -24,7 +24,7 @@ pipx install copier
 pipx install pre-commit
 pipx ensurepath
 # Clone this template and answer its questions
-copier copy https://github.com/openspp-project/openspp-odoo-addons-repo-template.git some-repo
+copier copy --UNSAFE https://github.com/openspp/openspp-odoo-addons-repo-template.git some-repo
 # Commit that
 cd some-repo
 git add .
@@ -38,7 +38,7 @@ Quick answer to update a repo:
 ```bash
 # Update the repo
 cd some-repo
-copier update
+copier update --UNSAFE
 # Reformat updated files
 pre-commit run
 # Commit update
@@ -55,13 +55,13 @@ Go read [our contribution guideline](CONTRIBUTING.md).
 
 This template allows to bootstrap and update addon repositories for these Odoo versions:
 
-- 10.0
 - 11.0
 - 12.0
 - 13.0
 - 14.0
 - 15.0
 - 16.0
+- 17.0
 
 Future versions will be added as they are released. Past versions could be added as long as they don't break
 existing branches.
