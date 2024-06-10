@@ -11,6 +11,13 @@
 # config as a blocking check.
 {% endblock %}
 {% block optional_checks %},
+    # Things that are temporaly optional
+    attribute-string-redundant,
+    xml-deprecated-tree-attribute,
+    deprecated-data-xml-node,
+    translation-positional-used,
+    translation-contains-variable,
+
     # messages that do not cause the lint step to fail
     consider-merging-classes-inherited,
     create-user-wo-reset-password,

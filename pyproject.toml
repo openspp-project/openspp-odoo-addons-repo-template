@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "oca-addons-repo-template"
+name = "openspp-odoo-addons-repo-template"
 version = "0.0.0" # Just a placeholder; the real version is the git tag
-description = "Template for OCA addon repos"
-authors = ["Odoo Community Association (OCA)"]
+description = "Template for OpenSPP addon repos"
+authors = ["OpenSPP"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.7.0"
+python = "^3.8.0"
 
 [tool.poetry.dev-dependencies]
-copier = ">=7"
+copier = ">=9"
 pytest = "*"
 pre-commit = "*"
 pytest-xdist = "*"
@@ -17,3 +17,14 @@ pytest-xdist = "*"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+# ruff
+
+[tool.ruff]
+fix = true
+
+[tool.ruff.lint]
+extend-select = [
+    "UP",  # pyupgrade
+    "I",  # isort
+]
